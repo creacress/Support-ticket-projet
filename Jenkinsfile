@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.10'
+            args '-u root'
+        }
+    }
 
     environment {
         PROJECT_NAME = "support-ticket"
@@ -39,7 +44,6 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
-
     }
 
     post {
