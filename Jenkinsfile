@@ -13,25 +13,26 @@ pipeline {
             }
         }
 
-        stage('Affichage de fichiers') {
+        stage('📦 Docker Compose Build') {
             steps {
-                sh 'ls -la'
+                sh 'docker-compose build'
             }
         }
 
-        stage('💬 Hello World') {
+        stage('🚀 Docker Compose Up') {
             steps {
-                echo "🎉 Jenkins est connecté au repo !"
+                sh 'docker-compose down || true'
+                sh 'docker-compose up -d'
             }
         }
     }
 
     post {
         success {
-            echo "✅ Pipeline terminé avec succès"
+            echo "✅ Déploiement réussi via CI/CD 🎉"
         }
         failure {
-            echo "❌ Une erreur est survenue pendant le pipeline"
+            echo "❌ Une erreur est survenue pendant le pipeline."
         }
     }
 }
