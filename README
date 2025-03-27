@@ -1,3 +1,6 @@
+### 📄 `README.md`
+
+```md
 # 🛠️ Projet Support Ticket – Backend FastAPI
 
 Ce projet est un backend **monolithique Python (FastAPI)** permettant de gérer des tickets de support IT avec rôles (Admin, Technicien, Employé), commentaires, statuts, etc.  
@@ -18,3 +21,67 @@ Le tout est automatisé avec **Docker**, **Jenkins CI/CD** et un **webhook GitHu
 
 ```bash
 docker-compose up --build
+```
+
+Accès API Docs : [http://localhost:8000/docs](http://localhost:8000/docs)
+
+## 📁 Structure du projet
+
+```
+.
+├── app/
+│   ├── models.py         # Modèles SQLAlchemy
+│   ├── schemas.py        # Pydantic schemas
+│   ├── routers/          # Routes API (auth, tickets, commentaires, etc.)
+│   └── database.py       # Connexion DB
+├── alembic/              # Migrations
+├── docker-compose.yml
+├── Dockerfile
+├── Jenkinsfile
+└── requirements.txt
+```
+
+## 🔧 CI/CD avec Jenkins
+
+### 1. Jenkinsfile
+
+Définit les étapes :
+- Checkout du code
+- `docker-compose build`
+- `docker-compose up -d`
+
+### 2. Pipeline Jenkins
+
+- Type : Pipeline
+- Source : Git SCM
+- Script : `Jenkinsfile`
+- Triggers : `GitHub hook trigger for GITScm polling`
+
+## 🔁 Webhook GitHub + ngrok
+
+### Pourquoi ?
+
+GitHub ne peut pas contacter `localhost`, donc on expose Jenkins avec `ngrok`.
+
+### Étapes :
+
+```bash
+ngrok config add-authtoken VOTRE_TOKEN
+ngrok http 8080
+```
+
+→ Copiez l’URL `https://xxxxx.ngrok-free.app/github-webhook/`  
+→ Collez-la dans les paramètres Webhooks GitHub
+
+## ✅ À venir (à ajouter plus tard)
+
+- ✅ Tests automatisés Pytest
+- ✅ Notification Slack/Discord
+- ✅ Déploiement distant (Cloud/VPS)
+- ✅ Frontend React connecté
+
+## 👤 Auteur
+
+**Cresson**  
+Data Engineer / DevOps / IA 🚀  
+https://github.com/creacress
