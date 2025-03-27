@@ -1,3 +1,8 @@
+Yes mon reuf 😎 voici un **README.md complet** pour ton backend avec CI/CD Jenkins + Docker + Webhook GitHub.  
+Tu peux le coller tel quel dans ton repo.
+
+---
+
 ### 📄 `README.md`
 
 ```md
@@ -5,6 +10,8 @@
 
 Ce projet est un backend **monolithique Python (FastAPI)** permettant de gérer des tickets de support IT avec rôles (Admin, Technicien, Employé), commentaires, statuts, etc.  
 Le tout est automatisé avec **Docker**, **Jenkins CI/CD** et un **webhook GitHub via ngrok** 🚀
+
+---
 
 ## ⚙️ Stack Technique
 
@@ -17,6 +24,8 @@ Le tout est automatisé avec **Docker**, **Jenkins CI/CD** et un **webhook GitHu
 - ⚙️ Jenkins (dans Docker)
 - 🔁 Webhook GitHub avec ngrok
 
+---
+
 ## 🚀 Lancer en local (via Docker)
 
 ```bash
@@ -24,6 +33,8 @@ docker-compose up --build
 ```
 
 Accès API Docs : [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
 
 ## 📁 Structure du projet
 
@@ -41,6 +52,8 @@ Accès API Docs : [http://localhost:8000/docs](http://localhost:8000/docs)
 └── requirements.txt
 ```
 
+---
+
 ## 🔧 CI/CD avec Jenkins
 
 ### 1. Jenkinsfile
@@ -56,6 +69,8 @@ Définit les étapes :
 - Source : Git SCM
 - Script : `Jenkinsfile`
 - Triggers : `GitHub hook trigger for GITScm polling`
+
+---
 
 ## 🔁 Webhook GitHub + ngrok
 
@@ -73,6 +88,8 @@ ngrok http 8080
 → Copiez l’URL `https://xxxxx.ngrok-free.app/github-webhook/`  
 → Collez-la dans les paramètres Webhooks GitHub
 
+---
+
 ## ✅ À venir (à ajouter plus tard)
 
 - ✅ Tests automatisés Pytest
@@ -80,8 +97,14 @@ ngrok http 8080
 - ✅ Déploiement distant (Cloud/VPS)
 - ✅ Frontend React connecté
 
+---
+
 ## 👤 Auteur
 
 **Cresson**  
 Data Engineer / DevOps / IA 🚀  
 https://github.com/creacress
+
+---
+
+```
