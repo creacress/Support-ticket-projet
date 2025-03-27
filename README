@@ -1,0 +1,20 @@
+# 🛠️ Projet Support Ticket – Backend FastAPI
+
+Ce projet est un backend **monolithique Python (FastAPI)** permettant de gérer des tickets de support IT avec rôles (Admin, Technicien, Employé), commentaires, statuts, etc.  
+Le tout est automatisé avec **Docker**, **Jenkins CI/CD** et un **webhook GitHub via ngrok** 🚀
+
+## ⚙️ Stack Technique
+
+- 🐍 Python 3.10 + FastAPI
+- 🐘 PostgreSQL (via Docker)
+- 🔐 JWT Auth (Employé / Technicien / Admin)
+- 🔄 SQLAlchemy + Alembic (migrations DB)
+- 🐳 Docker + Docker Compose
+- 🧪 Pytest (à venir)
+- ⚙️ Jenkins (dans Docker)
+- 🔁 Webhook GitHub avec ngrok
+
+## 🚀 Lancer en local (via Docker)
+
+```bash
+docker-compose up --build
